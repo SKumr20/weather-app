@@ -1,5 +1,10 @@
 import './style.css';
 
+import backgroundImage from './assets/images/jinen-shah-TwZb_z0Cf88-unsplash.jpg';
+
+document.body.style.backgroundImage = `url(${backgroundImage})`;
+
+
 const weatherForm = document.querySelector(".weatherForm");
 
 const searchCity = document.querySelector(".searchCity");
