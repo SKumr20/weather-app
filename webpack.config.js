@@ -8,7 +8,7 @@ module.exports = {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
-    publicPath: '/', // Ensure assets are served from the correct path
+    publicPath: '/weather-app/', // Ensure assets are served from the correct path
   },
   module: {
     rules: [
