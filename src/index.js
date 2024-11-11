@@ -1,6 +1,17 @@
 import './style.css';
+import sunnyIcon from './assets/images/sunny-day-svgrepo-com.png';
+import cloudyIcon from './assets/images/clouds.png';
+import mistIcon from './assets/images/mist.png';
+import drizzleIcon from './assets/images/drizzle.png';
+import rainIcon from './assets/images/rain.png';
+
+
+const weatherIcon = document.querySelector('.weather-icon');
+weatherIcon.src = sunnyIcon;
+
 
 import backgroundImage from './assets/images/jinen-shah-TwZb_z0Cf88-unsplash.jpg';
+
 
 document.body.style.backgroundImage = `url(${backgroundImage})`;
 
@@ -61,6 +72,22 @@ function displayWeatherinfo(data) {
 
     const skiesDisplay = document.getElementById("skies");
     skiesDisplay.textContent = description;
+
+    if (id >= 200 && id < 300) {
+        weatherIcon.src = drizzleIcon; // Thunderstorm
+    } else if (id >= 300 && id < 500) {
+        weatherIcon.src = drizzleIcon; // Drizzle
+    } else if (id >= 500 && id < 600) {
+        weatherIcon.src = rainIcon; // Rain
+    } else if (id >= 600 && id < 700) {
+        weatherIcon.src = mistIcon; // Snow
+    } else if (id === 800) {
+        weatherIcon.src = sunnyIcon; // Clear
+    } else if (id > 800) {
+        weatherIcon.src = cloudyIcon; // Clouds
+    }
+    
+
 }
 
 function displayError(message) {
