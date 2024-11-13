@@ -9,11 +9,16 @@ import rainIcon from './assets/images/rain.png';
 const weatherIcon = document.querySelector('.weather-icon');
 weatherIcon.src = sunnyIcon;
 
+// import the background images
 
-import backgroundImage from './assets/images/jinen-shah-TwZb_z0Cf88-unsplash.jpg';
+import backgroundImageDefault from './assets/images/jinen-shah-TwZb_z0Cf88-unsplash.jpg';
+import rainBg from './assets/images/rain-bg.jpg';
+import stormBg from './assets/images/thunderstorm-bg.jpg';
+import cloudBg from './assets/images/cloudy-bg.jpg';
+import clearBg from './assets/images/clear-bg.jpg';
+import drizzleBg from './assets/images/drizzle-bg.jpg';
 
-
-document.body.style.backgroundImage = `url(${backgroundImage})`;
+document.body.style.backgroundImage = `url(${backgroundImageDefault})`;
 
 
 const weatherForm = document.querySelector(".weatherForm");
@@ -74,17 +79,22 @@ function displayWeatherinfo(data) {
     skiesDisplay.textContent = description;
 
     if (id >= 200 && id < 300) {
-        weatherIcon.src = drizzleIcon; // Thunderstorm
+        weatherIcon.src = rainIcon; // Thunderstorm
+        document.body.style.backgroundImage = `url(${stormBg})`;
     } else if (id >= 300 && id < 500) {
         weatherIcon.src = drizzleIcon; // Drizzle
+        document.body.style.backgroundImage = `url(${drizzleBg})`;
     } else if (id >= 500 && id < 600) {
         weatherIcon.src = rainIcon; // Rain
+        document.body.style.backgroundImage = `url(${rainBg})`;
     } else if (id >= 600 && id < 700) {
         weatherIcon.src = mistIcon; // Snow
     } else if (id === 800) {
         weatherIcon.src = sunnyIcon; // Clear
+        document.body.style.backgroundImage = `url(${clearBg})`;
     } else if (id > 800) {
         weatherIcon.src = cloudyIcon; // Clouds
+        document.body.style.backgroundImage = `url(${cloudBg})`;
     }
     
 
